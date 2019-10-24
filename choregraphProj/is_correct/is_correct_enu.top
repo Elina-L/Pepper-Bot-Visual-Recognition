@@ -1,0 +1,11 @@
+topic: ~is_correct()
+language: enu
+
+concept:(correct) [cheese yes yep yeah "take the picture"]
+concept:(incorrect) ["don't want to take a picture" "not ready" no nope]
+
+u:(in:onActivation) 
+   ^rand ["Was I correct?" "Did I get it right?"]
+
+u1:(~correct) $PlayGames/IsCorrectYes=1
+u1:(~incorrect) $PlayGames/IsCorrectNo=1

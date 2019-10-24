@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<meta charset="UTF-8">
+<html>
+<head>
+    <title>Test</title>
+    <link href='stl.css' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="jquery.min.js"></script>
+
+    <!-- load qimessaging -->
+    <script src="/libs/qimessaging/2/qimessaging.js"></script>
+
+<meta name="viewport"
+   content="initial-scale = 1.333,
+   minimum-scale = 1.333,
+   maximum-scale = 1.333"/>
+
+<script type="text/javascript">
+    console.log("connection")
+    session = null;
+
+    QiSession( connected, disconnected, location.host);
+
+    function connected(s) {
+        console.log("Session connected");
+        session = s
+        subscribe_to_events();
+    }
+    function disconnected(error) {
+      console.log("Session disconnected");
+    }
+
+    function send_to_choregraph1() {
+
+               
+        session.service("ALMemory").then(
+            function(memory){
+                memory.raiseEvent("PlayGames/LearnAustin",1);
+                
+        }, 
+            function(error){
+                console.log("An error occurred:", error);
+        });
+    }
+    function send_to_choregraph2() {
+
+        session.service("ALMemory").then(
+            function(memory){
+                memory.raiseEvent("PlayGames/Button_GetJokeName",1);
+                
+        }, 
+            function(error){
+                console.log("An error occurred:", error);
+        });
+    }
+
+    function send_to_choregraph3() {
+
+        session.service("ALMemory").then(
+            function(memory){
+                memory.raiseEvent("PlayGames/Button_GetZip",1);
+                
+        }, 
+            function(error){
+                console.log("An error occurred:", error);
+        });
+    }
+
+    function send_to_choregraph4() {
+
+        session.service("ALMemory").then(
+            function(memory){
+                memory.raiseEvent("PlayGames/LearnIBM",1);
+                
+        }, 
+            function(error){
+                console.log("An error occurred in choregraph4:", error);
+        });
+    }
+
+    function send_to_choregraph5() {
+
+        session.service("ALMemory").then(
+            function(memory){
+                console.log("event raised")
+                memory.raiseEvent("PlayGames/LearnEDB",1);
+                
+                
+        }, 
+            function(error){
+                console.log("An error occurred in choregraph5:", error);
+        });
+    }
+
+function send_to_choregraph6() {
+
+        session.service("ALMemory").then(
+            function(memory){
+                console.log("event raised")
+                memory.raiseEvent("PlayGames/TakePic",1);
+                
+                
+        }, 
+            function(error){
+                console.log("An error occurred in choregraph6:", error);
+        });
+    }
+
+   </script>
+
+</head>
+
+
+<body bgcolor="#000080">
+    <div class="wrapper">
+
+                               
+        <div>
+          
+          <p style="font-size:36px;color:#FFFFFF" class="name-help">Processing...</p>
+</body>
+</html>
+

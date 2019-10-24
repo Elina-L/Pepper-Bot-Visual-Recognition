@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<meta charset="UTF-8">
+<head>
+    <title>Test</title>
+    <link href='stl.css' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="jquery.min.js"></script>
+
+    <!-- load qimessaging -->
+    <script src="/libs/qimessaging/2/qimessaging.js"></script>
+
+<script type="text/javascript">
+    console.log("connection")
+    session = null;
+
+    QiSession( connected, disconnected, location.host);
+
+    function connected(s) {
+        console.log("Session connected");
+        session = s
+        subscribe_to_events();
+    }
+    function disconnected(error) {
+      console.log("Session disconnected");
+    }
+
+    function subscribe_to_events() {
+        session.service("ALMemory").then(function (memory) {
+            memory.subscriber("completeName").then(function (subscriber) {
+                subscriber.signal.connect(function (state) {
+                    console.log(state);
+                    document.getElementById("completeName").value=state;
+                });
+            });
+            memory.subscriber("age").then(function (subscriber) {
+                subscriber.signal.connect(function (state) {
+                    console.log(state);
+                    document.getElementById("age").value=state;
+                });
+            });
+        });
+    }
+
+    function send_to_choregraph_jokename() {
+
+        var jokename=document.getElementById("jokename").value;
+                
+        session.service("ALMemory").then(
+            function(memory){
+                memory.raiseEvent("PlayGames/Button_GotJokeName",jokename);
+                }, 
+            function(error){
+                console.log("An error occurred:", error);
+        });
+    }
+
+   </script>
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <h1>First Name</h1>   
+        
+        <div>
+          <p style="font-size:96px; color:#FFFFFF" class="name-help">Please enter your first name for your joke.</p>
+        </div>
+        <input style="font-size:96px; color:#228b22" type="text" class="FirstName" Id="jokename" placeholder="First Name">
+
+        
+        <p>&#x00A;</p>  
+        <p></p>   
+        <input style="font-size:100px; color:#580C4D" type="submit" class="submit" value="Submit Name" onclick="send_to_choregraph_jokename();">
+        <p></p>     
+
+
+        <div style='height: 800px;'> </div>
+
+
+    </div>
+</body>

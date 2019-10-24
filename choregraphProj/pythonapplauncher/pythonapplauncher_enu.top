@@ -1,0 +1,8 @@
+topic: ~pythonapplauncher()
+language: enu
+
+
+u:(Wake up) sure!  ^switchFocus(pepper_awap-87c6f3/.)
+#u:(Technology Showcase) sure ! let me show you the best app ever! ^switchFocus(ebcgames_jlc-08bfca/.)
+#u:(Wake up and join us) sure ! let me show you the best app ever! ^switchFocus(ebcgames_jlc-08bfca/.)
+#U:(Briefing Center Games) sure ! let me show you the best app ever! ^switchFocus(ebcgames_jlc-08bfca/.)

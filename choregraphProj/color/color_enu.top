@@ -1,0 +1,24 @@
+topic: ~color()
+language: enu
+
+# Defining needed concepts, keywords or sentences corresponding to a concept.
+
+concept:(poweraivision) ["object recognition" "Power Aye Eye"]
+
+
+u:(in:onActivation)
+   ^rand ["Hello friend!  I'm Pepper.  Let's have some fun!  What would you like to do? I can do lots of things. Check out my tablet \pau=500\ Say the word in caps or click on my tablet to get started
+"  "Hi there.  What would you like to do? \pau=500\ Say the word in caps or click on my tablet to get started
+"  "Hi.I'm Pepper. Let's have some fun. \pau=500\ Say the word in caps or click on my tablet to get started
+"  "Hi human.  I can do lots of things.  What would you like to do? \pau=500\ Say the word in caps or click on my tablet to get started"]
+
+
+u1:(~poweraivision) $PlayGames/PowerAiVision=1
+
+# u1:(~takepic) OK.  Picture time! $PlayGames/TakePic=1
+
+u1:(e:Dialog/NotUnderstood) Sorry, I did not understand.  Can you try again please? ^stayInScope
+
+u1:([spongebob]) ok Patrick, I will stop now.  $PlayGames/OnExit=1
+
+u:([bullwinkle]) ok Squidward, I will stop now.  $PlayGames/OnExit=1

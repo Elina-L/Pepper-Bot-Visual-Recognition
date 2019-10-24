@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package uuid="python-heavy-pepper-85fa8d" version="0.0.0">
+ <names>
+  <name lang="en_US">Simple TakePic</name>
+ </names>
+ <descriptions>
+  <description lang="en_US">Austin EBC Hybrid Cloud Deployment with VMware vRA</description>
+ </descriptions>
+ <supportedLanguages>
+  <language>en_US</language>
+ </supportedLanguages>
+ <descriptionLanguages>
+  <language>en_US</language>
+ </descriptionLanguages>
+ <contents>
+  <behaviorContent path=".">
+   <userRequestable/>
+   <nature>interactive</nature>
+   <tags>
+    <tag lang="en_US">games</tag>
+   </tags>
+   <triggerSentences>
+    <sentence lang="en_US">Banana A I</sentence>
+    <sentence lang="en_US">Take a picture</sentence>
+   </triggerSentences>
+   <loadingResponses>
+    <sentence lang="en_US">I love bananas</sentence>
+   </loadingResponses>
+   <permissions>
+    <canRunOnPod/>
+    <canStandUp/>
+   </permissions>
+  </behaviorContent>
+  <dialogContent typeVersion="1.0" topicName="pythonapplauncher">
+   <topic language="en_US" path="pythonapplauncher/pythonapplauncher_enu.top"/>
+  </dialogContent>
+  <dialogContent typeVersion="1.0" topicName="color">
+   <topic language="en_US" path="color/color_enu.top"/>
+  </dialogContent>
+  <dialogContent typeVersion="1.0" topicName="stop_dialog">
+   <topic language="en_US" path="stop_dialog/stop_dialog_enu.top"/>
+  </dialogContent>
+  <dialogContent typeVersion="1.0" topicName="ready_picture">
+   <topic language="en_US" path="ready_picture/ready_picture_enu.top"/>
+  </dialogContent>
+  <dialogContent typeVersion="1.0" topicName="play_more">
+   <topic language="en_US" path="play_more/play_more_enu.top"/>
+  </dialogContent>
+  <dialogContent typeVersion="1.0" topicName="is_correct">
+   <topic language="en_US" path="is_correct/is_correct_enu.top"/>
+  </dialogContent>
+ </contents>
+ <services>
+  <service name="PythonAppMain" autorun="false" execStart="main.py"/>
+ </services>
+ <executableFiles>
+  <file path="main.py"/>
+ </executableFiles>
+</package>

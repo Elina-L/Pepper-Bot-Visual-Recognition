@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<meta charset="UTF-8">
+<html>
+<head>
+    <title>Test</title>
+    <link href='stl.css' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="jquery.min.js"></script>
+
+    <!-- load qimessaging -->
+    <script src="/libs/qimessaging/2/qimessaging.js"></script>
+
+<meta name="viewport"
+   content="initial-scale = 1.333,
+   minimum-scale = 1.333,
+   maximum-scale = 1.333"/>
+
+<script type="text/javascript">
+    console.log("connection")
+    session = null;
+
+    QiSession( connected, disconnected, location.host);
+
+    function connected(s) {
+        console.log("Session connected");
+        session = s
+        subscribe_to_events();
+    }
+    function disconnected(error) {
+      console.log("Session disconnected");
+    }
+
+
+function send_to_choregraph6() {
+
+        session.service("ALMemory").then(
+            function(memory){
+                console.log("event raised")
+                memory.raiseEvent("PlayGames/PowerAiVision",1);
+                
+                
+        }, 
+            function(error){
+                console.log("An error occurred in choregraph6:", error);
+        });
+    }
+
+   </script>
+
+</head>
+
+
+<body bgcolor="#105d83">
+   
+  <h1 style="position:absolute; left:460px; top:10px; font-size:48px; color:white" >Welcome to the IBM Austin</h1>
+  <h1 style="position:absolute; left:460px; top:60px; font-size:48px; color:white" >Systems Technology Showcase!</h1>
+
+  <p>
+  <input type="submit" style="position:absolute; font-size:32px;color:black; background-color:#ebedef; left:450px;height:50px;top:580px" value="Play PowerAI Vision game" onclick="send_to_choregraph6();"></p>  
+ 
+  
+</body>
+
+</html>
+

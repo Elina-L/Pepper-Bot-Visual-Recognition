@@ -1,0 +1,7 @@
+Variable names
+
+PlayGames
+- TellMeAJoke
+- PlayJeopardy
+- WeatherReport
+- OnExit

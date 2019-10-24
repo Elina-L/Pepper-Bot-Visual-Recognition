@@ -1,0 +1,8 @@
+topic: ~play_more()
+language: enu
+
+concept:(more) [yes yep yeah "play again"]
+concept:(done) [done no nope finished]
+
+u:(~more) Okay! $PlayGames/PlayMoreYes=1
+u1:(~done) Okay, I'm going to delete your images now. Thanks for playing! $PlayGames/OnExit=1

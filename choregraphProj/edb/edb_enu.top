@@ -1,0 +1,13 @@
+topic: ~edb()
+language: enu
+
+concept:(bye) [done finished bye goodbye "bye bye" "tata" "see you" adios cheerio "so long" farewell "have a nice day"]
+concept:(solutionbrief) ["i want the brief" "give me the brief" "show me the brief" "solution brief" "e d b solution brief" "brief" "enterprisedb solution brief" "enterprisedb brief" "asset 1" "the first one" "first"]
+concept:(ebook) ["e book" "edb e book" "enterprisedb e book" "asset 2" "the second one" "second" "I want the e book" "give me the e book"]
+concept:(webcast) [webcast "web cast" third "I want the webcast" "give me the webcast"]
+
+u:(in:onActivation) Say brief \pau=300\ e book \pau=300\ or web cast \pau=300\ or click on one of the buttons on my tablet.  When you are done say bye or done
+u1:(~solutionbrief) On it's way! $PlayGames/getEDBSolutionBrief=1
+u1:(~ebook) Here it comes! $PlayGames/getEDBeBook=1
+u1:(~webcast) Get ready! $PlayGames/getEDBWebcast=1
+u1:(~bye) $PlayGames/leaveEDB=1

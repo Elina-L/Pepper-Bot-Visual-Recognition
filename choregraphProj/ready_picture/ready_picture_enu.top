@@ -1,0 +1,11 @@
+topic: ~ready_picture()
+language: enu
+
+concept:(ready) [cheese yes yep yeah "take the picture"]
+concept:(notready) ["don't want to take a picture" "not ready" no nope]
+
+u:(in:onActivation) 
+   ^rand ["Are you ready for me to take a picture?"]
+
+u1:(~ready) Okay! $PlayGames/TakePicture=1
+u1:(~notready) $PlayGames/PlayMore=1
